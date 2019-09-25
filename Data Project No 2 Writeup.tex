@@ -1,0 +1,500 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+ 
+\begin{document}
+ 
+\begin{title}
+{Data Project No 2 - Optimal Trading Rule for Model Scenarios: }
+\end{title}
+\begin{author}
+{\textbf{Name:} Vignesh Iyer 
+\\ \textbf{Collaborators:} Bruce Englert, Madison Shaerr, Sarah Marshall, Zach Shepelak}
+\end{author}
+\maketitle
+
+
+\begin{enumerate}
+
+
+ \bigskip
+\item\textbf{Optimal Trading Rule for the Following Model Scenarios:}
+\\Let M be the number of paths, and n be the number of steps. Fix N = 100 steps and $M = 10^{6}$ paths.
+
+Let $\phi$ is the ratio/relationship between the co variance to the variance ($\sigma$). 
+To show this: 
+\begin{center}
+We know $\tau = \frac{1}{\kappa}$ where $\kappa$ is the speed of the mean reversion. 
+\\ $\Longrightarrow \phi = e^{-\kappa\Delta t}$ where $0 \leq \phi \leq 1$
+\\ To show $\kappa$ is always positive, $\tau \geq 0$ $\Longrightarrow \kappa \geq 0$
+\end{center}
+
+The parameter $\phi$ is given by the expression
+$$\phi = e^{-\kappa \Delta t}$$
+where $\kappa$ is the speed of mean reversion and $\Delta t$ is the length of a given time period. Thus, $\phi$ gives how fast the mean will revert.
+
+\vskip 10pt
+
+The parameter $\phi$ is always less than one. Since $\tau = \frac{1}{\kappa}$ where $\tau$ is half-life and $\kappa$ is the speed of mean reversion and $\tau > 0$ and $\kappa > 0$. Then,
+$$\phi = e^{-\kappa \Delta t} < e^0 = 1$$
+Therefore, $\phi < 1$.
+
+\vskip 10pt
+
+The parameter $m$ is the expected value of $P_{n}$ (the long term goal).
+
+\vskip 10pt
+
+Let parameter $\sigma$ denote the degree of volatility.
+
+\vskip 10pt
+
+It can be assumed that $P_0 = 0$. This is because the purpose of this simulation is to determine the optimal trading rule (i.e. when to exit the market) which gives a profit-taking and stop-loss prices which can be made relative to the initial price by a simple transformation from the initial price, if it is not equal to zero, to zero.
+
+
+
+\vskip 10pt
+
+
+\vskip 30pt
+
+\begin{enumerate}
+
+\item $(\phi, m, \sigma) = (2^{-0.2},0,1) = $
+
+\begin{itemize}
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-10)$
+
+Sharpe ratio : $1.249703$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-10)$
+
+Sharpe ratio : $3.449742$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-10)$
+
+Sharpe ratio : $0.865372$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-5)$
+
+Sharpe ratio : $0.592616$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-5)$
+
+Sharpe ratio : $0.840175$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-5)$
+
+Sharpe ratio : $0.306523$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,0)$
+
+Sharpe ratio : $-0.000362$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,0)$
+
+Sharpe ratio : $-0.099852$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,0)$
+
+Sharpe ratio : $-0.370172$
+
+\end{itemize}
+
+\item$(\phi, m, \sigma) = (2^{-0.2},5,1) = $
+
+\begin{itemize}
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-10)$
+
+Sharpe ratio : $1.446007$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-10)$
+
+Sharpe ratio : $4.715719$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-10)$
+
+Sharpe ratio : $8.759509$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-5)$
+
+Sharpe ratio : $1.439146$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-5)$
+
+Sharpe ratio : $4.697390$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-5)$
+
+Sharpe ratio : $8.678915$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,0)$
+
+Sharpe ratio : $0.648277$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,0)$
+
+Sharpe ratio : $0.856225$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,0)$
+
+Sharpe ratio : $0.923875$
+
+\end{itemize}
+\newpage
+\item$(\phi, m, \sigma) = (2^{-0.2},-5,1) = $
+
+\begin{itemize}
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-10)$
+
+Sharpe ratio : $-0.656561$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-10)$
+
+Sharpe ratio : $-1.726832$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-10)$
+
+Sharpe ratio : $-2.098658$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-5)$
+
+Sharpe ratio : $-0.935412$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-5)$
+
+Sharpe ratio : $-3.498848$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-5)$
+
+Sharpe ratio : $-9.746429$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,0)$
+
+Sharpe ratio : $-0.647277$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,0)$
+
+Sharpe ratio : $-1.165460$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,0)$
+
+Sharpe ratio : $-1.426939$
+
+\end{itemize}
+
+\item$(\phi, m, \sigma) = (2^{-0.2},0,2) = $
+
+\begin{itemize}
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-10)$
+
+Sharpe ratio : $0.597970$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-10)$
+
+Sharpe ratio : $0.843386$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-10)$
+
+Sharpe ratio : $0.835088$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-5)$
+
+Sharpe ratio : $0.151903$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-5)$
+
+Sharpe ratio : $0.158876$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-5)$
+
+Sharpe ratio : $0.071622$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,0)$
+
+Sharpe ratio : $0.000486$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,0)$
+
+Sharpe ratio : $-0.027080$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,0)$
+
+Sharpe ratio : $-0.100562$
+
+\end{itemize}
+
+\newpage
+\item$(\phi, m, \sigma) = (2^{-0.1},0,1) = $
+
+\begin{itemize}
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-10)$
+
+Sharpe ratio : $1.088742$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-10)$
+
+Sharpe ratio : $1.886867$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-10)$
+
+Sharpe ratio : $0.944388$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,-5)$
+
+Sharpe ratio : $0.258660$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,-5)$
+
+Sharpe ratio : $0.339284$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,-5)$
+
+Sharpe ratio : $0.152612$
+
+\item $(\bar{\pi}, \underline{\pi}) = (0,0)$
+
+Sharpe ratio : $-0.000152$
+
+\item $(\bar{\pi}, \underline{\pi}) = (2,0)$
+
+Sharpe ratio : $-0.049460$
+
+\item $(\bar{\pi}, \underline{\pi}) = (4,0)$
+
+Sharpe ratio : $-0.171229$
+
+\end{itemize}
+
+\end{enumerate}
+
+\newpage
+
+\textbf{Analysis:} 
+ 
+ By analyzing the OTR simulation from the test parameter sets (a), (b) and (c), we observe that a higher $m$ resulted in much higher Sharpe ratios, and likewise as predicted a lower $m$ resulted in lower Sharpe ratios. This simply demonstrates that a higher expected value for future price will produce odds in favor of high returns in the tested model. 
+\\The tested parameter set (d) differed from set (a) only in that it’s $\sigma$ value was greater. As predicted, a higher degree of volatility resulted in a lower Sharpe ratio. Parameter set (e) differed from set (a) in that its $\phi$ was greater. This too resulted in a lesser Sharpe ratio from that of set (a), which would postulate that a higher rate of mean reversion may yield marginal returns.
+
+Notably, all of the parameter sets with an $m$ of 0 (namely sets (a), (d) and (e)) had a maximum stop-loss value of -10 and optimal profit-taking value of 2. The largest calculated Sharpe ratio was $8.759509$, which was for the optimal trading rule of parameter set (b), with a profit-taking value of 4 and a stop-loss value of -10. Note that parameter set (b) had an $m$ of 5, which was the largest parameter given for $m$. 
+ 
+For parameter set (c), both the maximum stop-loss and profit-taking values were 0. This tested parameter set's trading rule had a Sharpe ratio of $-0.647277$, which was the lowest and only negative Sharpe ratio of any of the optimal trading rules. Although not demonstrated here, the use of the Sharpe ratio can be misleading such that negative returns can be brought closer to 0 by either increasing the return or increasing the volatility.
+
+The program was written in Java and source code is provided on the following pages.
+
+\newpage
+\begin{verbatim}
+import java.util.Random;
+import java.util.Scanner;
+
+public class Project {
+
+	public static void main (String [] args) {
+		Scanner in = new Scanner(System.in); 
+		
+		//Enter M
+		//print("enter the number of paths:"); 
+		//double M = in.nextDouble(); 
+		double M = Math.pow(10, 6); 
+		
+		//Enter N
+		//print("enter the number of steps:"); 
+		//double N = in.nextDouble();
+		double N = 100; 
+		
+		//Enter PU
+		print("enter the profit-taking bound: "); 
+		double PU = in.nextDouble(); 
+		
+		//Enter P1
+		print("enter the stop-loss bound: "); 
+		double PL = in.nextDouble(); 
+		
+		//Enter P0 
+		print("enter P0: "); 
+		double P0 = in.nextDouble(); 
+		
+		//Enter mu 
+		print("enter mu: ");
+		double mu = in.nextDouble(); 
+		
+		//Enter tau
+		print("enter tau: "); 
+		double tau = in.nextDouble(); 
+		
+		//Enter sigma 
+		print("enter sigma: "); 
+		double sigma = in.nextDouble(); 
+		
+		in.close(); 
+		
+		//Setup phi 
+		//phi = 2^(-1/tau);
+		double phi = Math.pow(2, (-1.0/tau)); 
+		
+		
+		//Create functions for Price and PnL
+		double [][] Price = genprice(M, N); 
+		double [][] PnL = genPnL(M); 
+		
+		//Set up ETA
+		double [][] ETA = genETA(sigma, M, N); 
+		
+		//generate OU paths:
+		
+		for(int row = 0; row < (int)M; row++) {
+			for(int col = 1; col < (int)N; col++) {
+				Price[row][col+1] = mu + phi*(Price[row][col] - mu) + ETA[row][col]; 
+			}
+		}
+		
+		for(int row = 1; row < (int)M; row++) {
+			int col = 1; 
+			while(col <= (int) N) {
+				col = col + 1; 
+				if(Price[row][col] > PU || Price[row][col]  < PL) {
+					break; 
+				}
+			}
+			PnL[row][0] = Price[row][col] - Price[row][1]; 
+		}
+
+		//Generate mean of PnL
+		double mean = getMean(PnL, (int) M); 
+		
+		//Generate variance  of PnL 
+		double variance = getVariance(PnL, (int) M, mean); 
+		
+		Double Sharpe = mean / Math.sqrt(variance); 
+		
+		print("Sharpe ratio for this rule is %8.6f"); 
+		print(Sharpe.toString()); 
+		
+	}
+	
+
+
+	/**
+	 * Calculates the variance of a row vector and returns that value. 
+	 * 
+	 * @param mat
+	 * @param rows
+	 * @param mean
+	 * @return
+	 */
+	public static double getVariance(double [][] mat, int rows, double mean) {
+		double sum = 0.0; 
+		double variance = 0.0; 
+		
+		//Subtract mean and square 
+		for(int r = 0; r < rows; r++) {
+			mat[r][0] -= mean; 
+			
+			mat[r][0] *= mat[r][0]; 
+		}
+		
+		//Sum of the squares 
+		for(int r = 0; r < rows; r++) {
+			sum += mat[r][0]; 
+		}
+		
+		variance = sum / (double) rows; 
+		
+		return variance; 
+	}
+	
+	/**
+	 * Calculate Mean of row vector . 
+	 * 
+	 * @param mat
+	 * @return
+	 */
+	public static double getMean(double [][] mat, int rows) {
+		double mean = 0.0; 
+		double sum = 0; 
+
+		for(int r = 0; r < rows; r ++) {
+			sum += mat[r][0]; 
+		}
+		mean = sum / (double)rows; 
+		
+		return mean; 
+	}
+		
+	/**
+	 * Generates random array of M by N * sigma 
+	 * @param sigma
+	 * @param M
+	 * @param N
+	 * @return
+	 */
+	public static double[][] genETA(double sigma, double M, double N){
+		Random rg = new Random(1245); 
+		
+		double [][] rMat = new double[(int) M][(int)N]; 
+		for(int row = 0; row < (int)M; row ++) {
+			for(int col = 0; col < (int)N; col++) {
+				rMat[row][col] = (double)(rg.nextInt((int)M)) * sigma; 
+			}
+		}
+		
+		return rMat; 
+	}
+	
+	/**
+	 * Returns a zero matrix that is M by 1 
+	 * @param M
+	 * @return
+	 */
+	public static double[][] genPnL(double M){
+		return new double[(int)M][1]; 
+	}
+	
+	/**
+	 * Returns a zero matrix of doubles that is m by n+1 
+	 * 
+	 * @param m
+	 * @param n
+	 * @return
+	 */
+	public static double[][] genprice(double M, double N){
+		return new double[(int)M][(int)(N+1)]; 
+	}
+	
+	
+
+
+	/**
+	 * Shortcut for printing to the console 
+	 * 
+	 * @param s
+	 */
+	public static void print(String s) {
+		System.out.println(s);
+	}
+}
+
+\end{verbatim}
+
+\newpage
+The following graphs represent the relationship between the upper and lower profit bounds, $(\bar{\pi}, \underline{\pi})$, with the calculated Sharpe ratio for tested parameter sets (a), (b), (c), (d), and (e). 
+\begin{center}
+ \includegraphics[scale = .23]{ScenarioA.png}
+ \includegraphics[scale = .23]{ScenarioB.png}
+ \includegraphics[scale = .23]{ScenarioC.png}
+ \includegraphics[scale = .23]{ScenarioD.png}
+ \includegraphics[scale = .23]{ScenarioE.png}
+\end{center}
+
+
+
+ \end{enumerate}
+ 
+\end{document}
+
